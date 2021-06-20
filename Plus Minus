@@ -1,0 +1,52 @@
+def plusMinus(arr):
+   Given an array of integers,calculate the ratios of its elements that are positive, negative, and zero.
+   Print the decimal value of each fraction on a new line with  places after the decimal.
+   
+   Sample Input
+
+STDIN           Function
+-----           --------
+6               arr[] size n = 6
+-4 3 -9 0 4 1   arr = [-4, 3, -9, 0, 4, 1]
+Sample Output
+
+0.500000
+0.333333
+0.166667
+   
+   ===================================
+   p_count=0.000000
+    n_count=0.000000
+    z_count=0.000000
+    for i in range (n):
+        if arr[i]>0:
+            p_count+=1
+        if arr[i]==0:
+            z_count+=1
+        if arr[i]<0:
+            n_count+=1
+    res_1=str((p_count)/n)
+    res_3=str((z_count)/n)
+    res_2=str((n_count)/n)
+    if len(res_1)>6:
+        value=round(float(res_1),6)
+        print(value)
+    elif len(res_1)<=6:
+        value=6-(int(len(res_1))-2)
+        ze="0"*value
+        print(res_1+ze)
+    if len(res_2)>6:
+        value=round(float(res_2),6)
+        print(value)
+    elif len(res_2)<=6:
+        value=6-(int(len(res_2))-2)
+        ze="0"*value
+        print(res_2+ze)
+    if len(res_3)>6:
+        value=round(float(res_3),6)
+        print(value)
+    elif len(res_3)<=6:
+        value=6-(int(len(res_3))-2)
+        ze="0"*value
+        print(res_3+ze)
+        
